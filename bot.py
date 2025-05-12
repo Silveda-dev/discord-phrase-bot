@@ -1,3 +1,6 @@
+#Populate selected phrases and responses as desired
+#Targeting of a specific user can be removed by deleting lines 13 and 42
+
 import os
 import random
 import discord
@@ -7,6 +10,7 @@ from discord.ext import commands
 #Accessing env variables
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
+TARGET = os.getenv("TARGET_ID")
 
 #Setting up intents and bot
 intents = discord.Intents.default()
@@ -35,9 +39,10 @@ async def on_message(message):
     if message.author == bot.user: #Do not read messages from the bot itself
         return
 
-    if check_phrases(message.content.lower()):
-        response = f'{message.author.mention} {random.choice(response_options)}' #Ping author of message and select random response
-        await message.channel.send(response)
+    if message.author.id == int(TARGET):
+        if check_phrases(message.content.lower()):
+            response = f'{message.author.mention} {random.choice(response_options)}' #Ping author of message and select random response
+            await message.channel.send(response)
 
 #Use token to connect to Discord
 bot.run(TOKEN)
