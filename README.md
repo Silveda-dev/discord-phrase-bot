@@ -22,6 +22,4 @@ To connect your bot to Discord, you'll first have to register a new application 
 DISCORD_TOKEN=COPIED_BOT_TOKEN_HERE
 TARGET_ID=TARGET_USER_ID_HERE
 ```
-3) If you don't require the bot to be active 24/7, one option to host the bot from your own machine. To achieve this, you can run the bot with the command `python3 bot.py` (depending on your version of Python). The command line should indicate when the bot has been successfully connected to Discord, and the bot should appear as Active in any servers it has been added to. Killing the command will take the bot offline.
-
-5) 
+3) If you don't require the bot to be active 24/7, one option to host the bot from your own machine. To achieve this, you can run the bot with the command `python3 bot.py` (depending on your version of Python). The command line should indicate when the bot has been successfully connected to Discord, and the bot should appear as Active in any servers it has been added to. Killing the command will take the bot offline. 
